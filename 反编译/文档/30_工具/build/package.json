@@ -1,0 +1,138 @@
+{
+  "name": "ai-code-completion",
+  "displayName": "Trae: AI Code Completion",
+  "description": "%description%",
+  "version": "1.0.0",
+  "versionCode": 20260212,
+  "icon": "resource/images/marscode/codelogo.png",
+  "publisher": "trae",
+  "private": true,
+  "license": "MIT",
+  "l10n": "./l10n",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Machine Learning",
+    "Programming Languages",
+    "Education",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onLanguage:python",
+    "onLanguage:go",
+    "onLanguage:java",
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:cpp",
+    "*"
+  ],
+  "main": "./dist/extension.js",
+  "enabledApiProposals": [
+    "inlineCompletionsAdditions",
+    "icube"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "trae.internal.lab.testCompFusionDisplay",
+        "title": "Trae: Mock Comp-Fusion Recommend Display UI"
+      },
+      {
+        "command": "trae.internal.lab.testCompFusionDisplayCMD",
+        "title": "Trae: Mock Comp-Fusion Recommend Display UI CMD"
+      },
+      {
+        "command": "trae.internal.lab.testGetSimilarCode",
+        "title": "Trae: Test Get Similar Code"
+      },
+      {
+        "command": "trae.internal.lab.testGetGrepSearchTool",
+        "title": "Trae: Test Get Grep Search Tool"
+      },
+      {
+        "command": "trae.acceptAllEdits",
+        "title": "Accept All Edits",
+        "category": "Trae",
+        "enablement": "trae.hasEditOfCurrentEditor"
+      },
+      {
+        "command": "trae.buildEditRequest",
+        "title": "Perform an Edit Request",
+        "category": "Trae"
+      },
+      {
+        "command": "trae.clearRecommendedEdits",
+        "title": "Clear Recommended Edits",
+        "category": "Trae",
+        "enablement": "trae.hasEditOfCurrentEditor"
+      },
+      {
+        "command": "trae.selectNextEditRecommend",
+        "title": "Cue-Pro Select Next",
+        "category": "Trae",
+        "enablement": "hasCueflowView && trae.hasCueflowData"
+      },
+      {
+        "command": "trae.selectPrevEditRecommend",
+        "title": "Cue-Pro Select Previous",
+        "category": "Trae",
+        "enablement": "hasCueflowView && trae.hasCueflowData"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "editor.action.inlineSuggest.acceptNextLine",
+        "when": "(inlineSuggestionVisible && !cueInlineSuggestionVisible) && !editorTabMovesFocus",
+        "key": "shift+tab",
+        "mac": "shift+tab"
+      },
+      {
+        "command": "trae.acceptAllEdits",
+        "when": "!editorReadonly && trae.hasEditOfCurrentEditor && (!inlineSuggestionVisible || cueInlineSuggestionVisible) && editorTextFocus && (trae.hasJumpOfCurrentEditor || cueSuggestFirst || !suggestWidgetVisible)",
+        "key": "tab",
+        "mac": "tab"
+      },
+      {
+        "command": "trae.acceptWordEdits",
+        "when": "!editorReadonly && trae.hasEditOfCurrentEditor && !trae.hasJumpOfCurrentEditor && (!inlineSuggestionVisible || cueInlineSuggestionVisible)",
+        "key": "ctrl+right",
+        "mac": "cmd+right"
+      },
+      {
+        "command": "trae.acceptLineEdits",
+        "when": "!editorReadonly && trae.hasEditOfCurrentEditor && !trae.hasJumpOfCurrentEditor && (!inlineSuggestionVisible || cueInlineSuggestionVisible)",
+        "key": "shift+tab",
+        "mac": "shift+tab"
+      },
+      {
+        "key": "tab",
+        "mac": "tab",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "(inlineSuggestionHasIndentationLessThanTabSize || trae.hasInlineSuggestShouldAcceptDirect) && (inlineSuggestionVisible && !cueInlineSuggestionVisible) && !editorHoverFocused && !editorTabMovesFocus && (cueSuggestFirst || !suggestWidgetVisible)"
+      },
+      {
+        "command": "trae.buildEditRequest",
+        "when": "!editorReadonly",
+        "key": "ctrl+shift+enter",
+        "mac": "ctrl+shift+enter"
+      },
+      {
+        "command": "trae.clearRecommendedEdits",
+        "when": "!editorReadonly && (!inlineSuggestionVisible || cueInlineSuggestionVisible)",
+        "key": "escape",
+        "mac": "escape"
+      },
+      {
+        "command": "trae.selectNextEditRecommend",
+        "key": "ctrl+down",
+        "mac": "cmd+down"
+      },
+      {
+        "command": "trae.selectPrevEditRecommend",
+        "key": "ctrl+up",
+        "mac": "cmd+up"
+      }
+    ]
+  }
+}

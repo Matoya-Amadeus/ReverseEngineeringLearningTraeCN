@@ -1,0 +1,36 @@
+#!/bin/zsh
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+CONTENT_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+
+CONTENT_ROOT="$CONTENT_ROOT"
+LOG_DIR="$ROOT_DIR/docs/runtime-logs"
+mkdir -p "$LOG_DIR"
+OUT="$LOG_DIR/native-layout-check-$(date +%Y%m%d-%H%M%S).log"
+
+{
+  echo "[layout-check] ts=$(date -Iseconds)"
+  echo "[layout-check] CONTENT_ROOT=$CONTENT_ROOT"
+  echo ""
+  echo "== root =="
+  ls -la "$CONTENT_ROOT"
+  echo ""
+  echo "== MacOS =="
+  ls -la "$CONTENT_ROOT/MacOS"
+  echo ""
+  echo "== Frameworks =="
+  ls -la "$CONTENT_ROOT/Frameworks"
+  echo ""
+  echo "== Resources =="
+  ls -la "$CONTENT_ROOT/Resources"
+  echo ""
+  echo "== key files =="
+  test -f "$CONTENT_ROOT/Info.plist" && echo "OK Info.plist" || echo "MISS Info.plist"
+  test -f "$CONTENT_ROOT/PkgInfo" && echo "OK PkgInfo" || echo "MISS PkgInfo"
+  test -d "$CONTENT_ROOT/_CodeSignature" && echo "OK _CodeSignature" || echo "MISS _CodeSignature"
+  test -f "$CONTENT_ROOT/MacOS/Electron" && echo "OK MacOS/Electron" || echo "MISS MacOS/Electron"
+  test -f "$CONTENT_ROOT/Resources/app/package.json" && echo "OK Resources/app/package.json" || echo "MISS Resources/app/package.json"
+  test -f "$CONTENT_ROOT/Resources/app/out/main.js" && echo "OK Resources/app/out/main.js" || echo "MISS Resources/app/out/main.js"
+} | tee "$OUT"

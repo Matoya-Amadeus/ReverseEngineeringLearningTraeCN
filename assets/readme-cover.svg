@@ -1,0 +1,53 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#09131F"/>
+      <stop offset="1" stop-color="#142E45"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(260 120) rotate(22) scale(340 220)">
+      <stop stop-color="#2EE6A6" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#2EE6A6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1020 520) rotate(12) scale(420 260)">
+      <stop stop-color="#39B4FF" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#39B4FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="640" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="640" rx="24" fill="url(#glow1)"/>
+  <rect width="1280" height="640" rx="24" fill="url(#glow2)"/>
+
+  <g opacity="0.25" stroke="#6FD3FF" stroke-width="1">
+    <path d="M0 160H1280"/>
+    <path d="M0 320H1280"/>
+    <path d="M0 480H1280"/>
+    <path d="M220 0V640"/>
+    <path d="M640 0V640"/>
+    <path d="M1040 0V640"/>
+  </g>
+
+  <rect x="76" y="84" width="520" height="72" rx="14" fill="#0E1D2E" stroke="#2EE6A6" stroke-opacity="0.5"/>
+  <text x="108" y="130" fill="#C8FFF0" font-size="34" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-weight="700">学习版不能用 · 重建工程</text>
+
+  <text x="82" y="236" fill="#EAF4FF" font-size="56" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-weight="700">TraeCN UI/流程学习项目</text>
+  <text x="82" y="292" fill="#9EC7E8" font-size="30" font-family="JetBrains Mono, Menlo, monospace">Reconstruction · Mock Auth · Offline Safe Mode</text>
+
+  <g>
+    <rect x="82" y="352" width="218" height="52" rx="10" fill="#1A3A53"/>
+    <text x="108" y="386" fill="#B4E6FF" font-size="24" font-family="PingFang SC, Microsoft YaHei, sans-serif">仅供学习研究</text>
+
+    <rect x="316" y="352" width="256" height="52" rx="10" fill="#153B35"/>
+    <text x="342" y="386" fill="#BBFFE3" font-size="24" font-family="PingFang SC, Microsoft YaHei, sans-serif">非官方可商用版本</text>
+  </g>
+
+  <g opacity="0.85">
+    <rect x="840" y="126" width="350" height="390" rx="18" fill="#0D1E2D" stroke="#3A6C92"/>
+    <text x="874" y="182" fill="#CFE8FF" font-size="30" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-weight="700">目录速览</text>
+    <text x="874" y="230" fill="#88B7DC" font-size="24" font-family="JetBrains Mono, Menlo, monospace">反编译/反向框架</text>
+    <text x="874" y="270" fill="#88B7DC" font-size="24" font-family="JetBrains Mono, Menlo, monospace">Resources/app</text>
+    <text x="874" y="310" fill="#88B7DC" font-size="24" font-family="JetBrains Mono, Menlo, monospace">学习版不能用.command</text>
+    <text x="874" y="350" fill="#88B7DC" font-size="24" font-family="JetBrains Mono, Menlo, monospace">assets/readme-cover.svg</text>
+    <text x="874" y="420" fill="#59D0A8" font-size="22" font-family="PingFang SC, Microsoft YaHei, sans-serif">README UI cover</text>
+  </g>
+</svg>

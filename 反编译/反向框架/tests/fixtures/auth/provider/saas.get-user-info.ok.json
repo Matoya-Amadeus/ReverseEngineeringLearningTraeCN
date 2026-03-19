@@ -1,0 +1,1 @@
+{"code":0,"Data":{"UserInfo":{"UserID":"su1","Name":"SaaS User","Email":"saas@example.com","Avatar":"","Scope":"saas","TenantID":"tenant-1"},"TenantInfoBase":{"TenantName":"Demo Tenant","ProductType":"team"}},"HostInfo":{"Console":"https://console.example.com","Api":"https://api.example.com"}}

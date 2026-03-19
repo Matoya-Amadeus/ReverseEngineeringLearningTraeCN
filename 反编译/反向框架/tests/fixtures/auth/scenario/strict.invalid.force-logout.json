@@ -1,0 +1,1 @@
+{"name":"strict_invalid_force_logout","provider":"marscode","checkResult":{"isValid":false,"errorCode":"40101"},"expect":{"forceLogout":true}}
